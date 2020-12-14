@@ -90,6 +90,6 @@ When the installation is complete, you will see this screen informing you that t
 
 The virtual machine will show you this screen, showing the IP address you have to navigate to in order to activate your appliance.
 
-![alt text](https://github.com/chinmayudand/Practice-sample/blob/main/2020-12-14%2023_17_48-Editing%20Practice-sample_README.md%20at%20main%20%C2%B7%20chinmayudand_Practice-sample.png)
+![alt text](http://github.com/chinmayudand/Practice-sample/blob/main/2020-12-14%2023_17_48-Editing%20Practice-sample_README.md%20at%20main%20%C2%B7%20chinmayudand_Practice-sample.png)
 
 
