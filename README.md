@@ -93,4 +93,3 @@ The virtual machine will show you this screen, showing the IP address you have t
 ![alt text](https://github.com/chinmayudand/Practice-sample/blob/main/2020-12-14%2023_17_48-Editing%20Practice-sample_README.md%20at%20main%20%C2%B7%20chinmayudand_Practice-sample.png)
 
 
-
