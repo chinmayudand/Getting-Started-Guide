@@ -30,11 +30,11 @@ Follow the below steps to import the appliance file:
 
 1. Click **Import**.
 
-![alt text](https://github.com/chinmayudand/Getting-Started-Guide/blob/main/1.png)
+![alt text](1.png)
 
 2. Select the .ova file you just downloaded containing the ownCloud appliance.Then click **'Next'** button.
 
-![alt text](https://github.com/chinmayudand/Getting-Started-Guide/blob/main/2.png)
+![alt text](2.png)
 
 3. In the next screen, check the settings and click **'Import'**.
 
