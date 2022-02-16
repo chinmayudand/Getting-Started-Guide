@@ -94,7 +94,6 @@ The virtual machine will show you this screen, showing the IP address you have t
 
 
 
-
 # API Documentation
 ## Surfreport
 Contains information about surfing conditions, including the surf height, water temperature, wind, and tide. Also provides an overall recommendation about whether to go surfing.
@@ -111,13 +110,13 @@ GET
 
 | Path parameter | Required/Optional | Description | Data Type |
 | --------- | ----------- | --------- | --------- |
-| {beachId} | Optional | Refers to the ID for the beach you want to look up | integer |
+| {beachId} | Required | Refers to the ID for the beach you want to look up | Integer |
 
 #### Query String paramerts
 
 | Query string parameter | Required/Optional | Description | Data Type |
 | --------- | ----------- | --------- | --------- |
-| days | Optional | The number of days to include in the response. Default is 3. Max 10 | integer |
+| days | Optional | The number of days to include in the response. Default is 3. Max 10 | Integer |
 | time | Optional | The time you want the report for. | Integer. Unix format (ms since 1970) in UTC |
 
 ### Sample request
@@ -174,16 +173,27 @@ The following table describes each item in the response.
 
 | Response Item | Description | Data Type |
 | --------- | ----------- | --------- |
-| beach | The beach you selected based on the beach ID in the request. The beach name is the official name as described in the National Park Service Geodatabase. | integer |
+| beach | The beach you selected based on the beach ID in the request. The beach name is the official name as described in the National Park Service Geodatabase. | String |
 | {day} | The day(s) of the week requested. | Object |
 | {time} | The time for the conditions. | String |
-| {day}/{time}/tide | The level of tide at the beach for a specific day and time. Tide is the distance inland that the water rises to, and can be a positive or negative number. When the tide is out, the number is negative. When the tide is in, the number is positive. The 0 point reflects the line when the tide is neither going in nor out but is in transition between the two states. | String |
+| {day}/{time}/tide | The level of tide at the beach for a specific day and time. Tide is the distance inland that the water rises to, and can be a positive or negative number. When the tide is out, the number is negative. When the tide is in, the number is positive. The 0 point reflects the line when the tide is neither going in nor out but is in transition between the two states. | Integer |
 | {day}/{time}/wind | The wind speed at the beach, measured in knots (nautical miles per hour). Wind affects the surf height and general wave conditions. Wind speeds of more than 15 knots make surf conditions undesirable because the wind creates white caps and choppy waters. | Integer |
 | {day}/{time}/watertemp | The temperature of the water, returned in Fahrenheit or Celsius depending upon the units you specify. Water temperatures below 70 F usually require you to wear a wetsuit. With temperatures below 60, you will need at least a 3mm wetsuit and preferably booties to stay warm. | Integer |
 | {day}/{time}/surfheight | The height of the waves, returned in either feet or centimeters depending on the units you specify. A surf height of 3 feet is the minimum size needed for surfing. If the surf height exceeds 10 feet, it is not safe to surf. | Integer |
 | {day}/{time}/recommendation | An overall recommendation based on a combination of the various factors (wind, watertemp, surfheight), etc. | String |
 
 
+#### Error and Status codes
+
+For every request, Surf Report returns one of the HTTP error or status codes listed here.
+
+
+| Error code | Description | Message displayed |
+| --------- | ----------- | --------- |
+| 200 | Successful request | Your request was successful. |
+| 400 | Invalid request or request cannot be processed | Your request is invalid or cannot be processed. {Error message that explains more about the specific problem.} |
+| 404 | Specified beach not found | The beach ID you specified is not currently included in our list of available beaches. |
+| 500 | Problem with server | There is an internal problem with the server.|
 
 
 
